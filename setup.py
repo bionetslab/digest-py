@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="digest",
+    name="bio-digest",
     version="0.0.1",
     author="Klaudia Adamowicz",
     author_email='klaudia.adamowicz@uni-hamburg.de',
@@ -19,6 +19,5 @@ setuptools.setup(
     ],                                      # Information to filter the project on PyPi website
     python_requires='>=3.8',
     py_modules=["bio-digest"],
-    package_dir={'': 'digest'},
     install_requires=[]
 )
