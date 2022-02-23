@@ -8,13 +8,15 @@ setuptools.setup(
     version="0.0.1",
     author="Klaudia Adamowicz",
     author_email='klaudia.adamowicz@uni-hamburg.de',
+    url='http://pypi.python.org/pypi/biodigest/',
+    license='LICENSE',
     description="Disease and Gene Set and Clustering Validation Tool (DIGEST)",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    packages=['digest', 'digest.evaluation', 'digest.evaluation.d_utils', 'digest.evaluation.mappers'],
+    packages=['biodigest', 'biodigest.digest', 'biodigest.digest.evaluation', 'biodigest.digest.evaluation.d_utils', 'biodigest.digest.evaluation.mappers'],
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
+        # "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],                                      # Information to filter the project on PyPi website
     python_requires='>=3.8',
