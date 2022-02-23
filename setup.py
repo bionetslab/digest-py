@@ -13,7 +13,7 @@ setuptools.setup(
     description="Disease and Gene Set and Clustering Validation Tool (DIGEST)",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    packages=['biodigest', 'biodigest.digest', 'biodigest.digest.evaluation', 'biodigest.digest.evaluation.d_utils', 'biodigest.digest.evaluation.mappers'],
+    packages=['biodigest', 'biodigest.evaluation', 'biodigest.evaluation.d_utils', 'biodigest.evaluation.mappers'],
     classifiers=[
         "Programming Language :: Python :: 3",
         # "License :: OSI Approved :: MIT License",
