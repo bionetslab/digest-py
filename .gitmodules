@@ -1,0 +1,3 @@
+[submodule "biodigest/digest"]
+	path = biodigest/digest
+	url = git@github.com:bionetslab/digest.git
