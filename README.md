@@ -1,5 +1,5 @@
 # biodigest
-The python package for [DIGEST](https://digest-validation.net/) (**Di**sease and **Ge**ne **S**et and Clustering Validation **T**ool). It greatly facilitates in silico validation of gene and disease sets and clusterings via fully automated validation pipelines comprising disease and gene ID mapping, enrichment
+The python package for [DIGEST](https://digest-validation.net/) (validation of **di**sease and **ge**ne **s**ets or clus**t**erings). It greatly facilitates in silico validation of gene and disease sets or clusterings via fully automated validation pipelines comprising disease and gene ID mapping, enrichment
 analysis, comparisons of shared genes and variants, and background distribution estimation. Moreover, functionality is provided to automatically update the external databases used by the pipelines.
 
 [Source code](https://github.com/bionetslab/digest)
@@ -25,11 +25,13 @@ setup.main(setup_type="create")
 
 ## Run validation
 ```python
-single_validation(tar: Union[pd.DataFrame, set], tar_id: str, mode: str, distance: str = "jaccard",
-                  ref: Union[str, set] = None, ref_id: str = None, enriched: bool = False,
-                  mapper: Mapper = FileMapper(), runs: int = config.NUMBER_OF_RANDOM_RUNS,
-                  background_model: str = "complete", replace=100, verbose: bool = False):
+from biodigest.single_validation import single_validation
+results = single_validation(tar: Union[pd.DataFrame, set], tar_id: str, mode: str, distance: str = "jaccard",
+                            ref: Union[str, set] = None, ref_id: str = None, enriched: bool = False,
+                            mapper: Mapper = FileMapper(), runs: int = config.NUMBER_OF_RANDOM_RUNS,
+                            background_model: str = "complete", replace=100, verbose: bool = False)
 ```
+All results that can later be saved and visualize are saved in `results` as data type `dict()`.
 ### Parameters
 #### Required parameters
 - **tar**: Target input you want to be validated
@@ -59,5 +61,28 @@ single_validation(tar: Union[pd.DataFrame, set], tar_id: str, mode: str, distanc
 #### Background models
 - **complete**: Random ids will be picked completely randomly
 - **term-pres**: Random ids will preserve the number of mapped terms for the replaced ids
+## Save and visualize results
+```python
+from biodigest.single_validation import save_results
+from biodigest.evaluation.d_utils.plotting_utils import create_plots
+
+# Save results into json file and 2 .csv table files
+save_results(results: dict, prefix: str, out_dir)
+
+# Generate at save plots based on results
+create_plots(results, mode, tar, tar_id, out_dir, prefix, file_type: str = "pdf")
+```
+### Parameters
+#### Required parameters
+- **results**: Is the output created with method `single_validation` as data type `dict()`
+- **prefix**: Prefix for file names
+- **out_dir**: Output directory for the generated files
+#### Additional required parameters for create_plots
+- **tar**: Target input you want to be validated
+  - a cluster should be of type `pd.DataFrame()` with `columns=["id","cluster"]`
+  - a set should be of type `set()`
+- **tar_id**: Is the id type of the target (see possible options above)
+#### Optional parameters for create_plots
+- **file_type**: Type of the plots image files.
 ## Example runs
 Check out the [tutorial](https://github.com/bionetslab/digest-tutorial) to see examples of usage in a script.
