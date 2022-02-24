@@ -5,12 +5,12 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="biodigest",
-    version="0.0.5",
+    version="0.0.6",
     author="Klaudia Adamowicz",
     author_email='klaudia.adamowicz@uni-hamburg.de',
     url='http://pypi.python.org/pypi/biodigest/',
     license='LICENSE',
-    description="Disease and Gene Set and Clustering Validation Tool (DIGEST)",
+    description="Validation of Disease and Gene Sets or Clusterings (DIGEST)",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=['biodigest', 'biodigest.evaluation', 'biodigest.evaluation.d_utils', 'biodigest.evaluation.mappers'],
