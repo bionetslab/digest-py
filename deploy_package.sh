@@ -1,0 +1,5 @@
+# build dist
+python setup.py sdist
+
+# test on test pypi
+python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/biodigest-0.0.4.tar.gz
