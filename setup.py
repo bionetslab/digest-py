@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="biodigest",
-    version="0.0.4",
+    version="0.0.5",
     author="Klaudia Adamowicz",
     author_email='klaudia.adamowicz@uni-hamburg.de',
     url='http://pypi.python.org/pypi/biodigest/',
@@ -25,7 +25,7 @@ setuptools.setup(
     python_requires='>=3.7',
     install_requires=[
         "pandas>=1.2.0",
-        "numpy>=1.21.5",
+        "numpy>=1.20.0",
         "scipy>=1.5.4",
         "seaborn==0.11.2",
         "biothings_client==0.2.6",
