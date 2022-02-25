@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="biodigest",
-    version="0.0.7",
+    version="0.0.9",
     author="Klaudia Adamowicz",
     author_email='klaudia.adamowicz@uni-hamburg.de',
     url='http://pypi.python.org/pypi/biodigest/',
