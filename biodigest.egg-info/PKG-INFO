@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: biodigest
-Version: 0.0.9
+Version: 0.0.10
 Summary: Validation of Disease and Gene Sets or Clusterings (DIGEST)
 Home-page: http://pypi.python.org/pypi/biodigest/
 Author: Klaudia Adamowicz
@@ -14,6 +14,10 @@ Classifier: Intended Audience :: Science/Research
 Requires-Python: >=3.7
 Description-Content-Type: text/markdown
 License-File: LICENSE
+
+<p align="center">
+  <img alt="DIGEST Logo" src="https://github.com/bionetslab/digest/blob/main/digest_logo.png?raw=true" width="500" />
+</p>
 
 # biodigest
 The python package for [DIGEST](https://digest-validation.net/) (validation of **di**sease and **ge**ne **s**ets or clus**t**erings). It greatly facilitates in silico validation of gene and disease sets or clusterings via fully automated validation pipelines comprising disease and gene ID mapping, enrichment
@@ -78,6 +82,20 @@ All results that can later be saved and visualize are saved in `results` as data
 #### Background models
 - **complete**: Random ids will be picked completely randomly
 - **term-pres**: Random ids will preserve the number of mapped terms for the replaced ids
+### Result
+The method call returns the result in a json format of datatype dict which consists of 
+the following elements:
+```python
+result = {'status': 'Status text',
+          'input_values': {'values': dict(), 'mapped_ids': list()}, 
+          'p_values': {'values': dict()}}
+```
+- **status**: contains either an error message if a mapping failed or "ok" if IDs could be mapped
+- **input_values**:
+  - **values**: table in dict format with the functional or genetic relevance score(s) determined for solely their input
+  - **mapped_ids**: list containing the IDs with non empty annotations per functional or genetic annotation type
+  
+- **p_values**: table in dict format with the calculated empirical P-values using the selected background model and other parameters that indicate the significance of the calculated relevance scores derived from the input
 ## Save and visualize results
 ```python
 from biodigest.single_validation import save_results
