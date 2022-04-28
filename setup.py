@@ -4,13 +4,13 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="biodigest",
-    version="0.0.12",
+    name="biodigest-light",
+    version="0.0.3",
     author="Klaudia Adamowicz",
     author_email='klaudia.adamowicz@uni-hamburg.de',
     url='http://pypi.python.org/pypi/biodigest/',
     license='LICENSE',
-    description="Validation of Disease and Gene Sets or Clusterings (DIGEST)",
+    description="In silico Validation of Disease and Gene Sets, Clusterings or Subnetworks (DIGEST)",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=['biodigest', 'biodigest.evaluation', 'biodigest.evaluation.d_utils', 'biodigest.evaluation.mappers'],

@@ -2,9 +2,12 @@
   <img alt="DIGEST Logo" src="https://github.com/bionetslab/digest/blob/main/digest_logo.png?raw=true" width="500" />
 </p>
 
-# biodigest
-The python package for [DIGEST](https://digest-validation.net/) (validation of **di**sease and **ge**ne **s**ets or clus**t**erings). It greatly facilitates in silico validation of gene and disease sets or clusterings via fully automated validation pipelines comprising disease and gene ID mapping, enrichment
+# biodigest light
+The light version of [DIGEST](https://digest-validation.net/) (validation of **di**sease and **ge**ne **s**ets, clus**t**erings or subnetworks) called [biodigest-light](https://pypi.org/project/biodigest-light/). It greatly facilitates in silico validation of gene and disease sets or clusterings via fully automated validation pipelines comprising disease and gene ID mapping, enrichment
 analysis, comparisons of shared genes and variants, and background distribution estimation. Moreover, functionality is provided to automatically update the external databases used by the pipelines.
+
+Here the subnetwork function ist excluded. If you wish to use the full DIGEST version, check out
+[biodigest](https://pypi.org/project/biodigest/).
 
 [Source code](https://github.com/bionetslab/digest)
 
@@ -82,13 +85,15 @@ result = {'status': 'Status text',
 ## Save and visualize results
 ```python
 from biodigest.single_validation import save_results
-from biodigest.evaluation.d_utils.plotting_utils import create_plots
+from biodigest.evaluation.d_utils.plotting_utils import create_plots, create_extended_plots
 
 # Save results into json file and 2 .csv table files
 save_results(results: dict, prefix: str, out_dir)
 
-# Generate at save plots based on results
+# Generate and save plots based on results
 create_plots(results, mode, tar, tar_id, out_dir, prefix, file_type: str = "pdf")
+# Generate and save extended plots based on results
+create_extended_plots(results, mode, tar, out_dir, prefix, file_type: str = "pdf")
 ```
 ### Parameters
 #### Required parameters
@@ -104,3 +109,4 @@ create_plots(results, mode, tar, tar_id, out_dir, prefix, file_type: str = "pdf"
 - **file_type**: Type of the plots image files.
 ## Example runs
 Check out the [tutorial](https://github.com/bionetslab/digest-tutorial) to see examples of usage in a script.
+Keep in mind, this tutorial supports the full [biodigest](https://pypi.org/project/biodigest/) version and therefor also shows the subnetwork mode.
