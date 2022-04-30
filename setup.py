@@ -5,12 +5,12 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="biodigest",
-    version="0.0.12",
+    version="0.1.0",
     author="Klaudia Adamowicz",
     author_email='klaudia.adamowicz@uni-hamburg.de',
     url='http://pypi.python.org/pypi/biodigest/',
     license='LICENSE',
-    description="Validation of Disease and Gene Sets or Clusterings (DIGEST)",
+    description="In silico Validation of Disease and Gene Sets, Clusterings or Subnetworks (DIGEST)",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=['biodigest', 'biodigest.evaluation', 'biodigest.evaluation.d_utils', 'biodigest.evaluation.mappers'],
@@ -30,6 +30,7 @@ setuptools.setup(
         "seaborn==0.11.2",
         "biothings_client==0.2.6",
         "gseapy==0.10.5",
-        "psutil==5.9.0"
+        "psutil==5.9.0",
+        "requests>=2.26.0",
     ]
 )
