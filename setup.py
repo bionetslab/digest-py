@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="biodigest",
-    version="0.1.0",
+    version="0.2.2",
     author="Klaudia Adamowicz",
     author_email='klaudia.adamowicz@uni-hamburg.de',
     url='http://pypi.python.org/pypi/biodigest/',
@@ -32,5 +32,6 @@ setuptools.setup(
         "gseapy==0.10.5",
         "psutil==5.9.0",
         "requests>=2.26.0",
+        "pycairo>=1.20.1",
     ]
 )
