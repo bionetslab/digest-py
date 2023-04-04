@@ -1,12 +1,11 @@
 Metadata-Version: 2.1
 Name: biodigest
-Version: 0.2.6
+Version: 0.2.8
 Summary: In silico Validation of Disease and Gene Sets, Clusterings or Subnetworks (DIGEST)
 Home-page: http://pypi.python.org/pypi/biodigest/
 Author: Klaudia Adamowicz
 Author-email: klaudia.adamowicz@uni-hamburg.de
 License: LICENSE
-Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3.7
 Classifier: Programming Language :: Python :: 3.8
 Classifier: Programming Language :: Python :: 3.9
@@ -191,5 +190,3 @@ create_contribution_graphs(result_sig, tar_id, network_data, out_dir, prefix,
 - **file_type**: Type of the plots image files.
 ## Example runs
 Check out the [tutorial](https://github.com/bionetslab/digest-tutorial) to see examples of usage in a script.
-
-
