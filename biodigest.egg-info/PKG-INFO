@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: biodigest
-Version: 0.2.8
+Version: 0.2.10
 Summary: In silico Validation of Disease and Gene Sets, Clusterings or Subnetworks (DIGEST)
 Home-page: http://pypi.python.org/pypi/biodigest/
 Author: Klaudia Adamowicz
